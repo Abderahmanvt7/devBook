@@ -1,0 +1,599 @@
+/*
+* base styles overrides
+* reusables components
+* differenets page sections
+*
+**/
+
+/* ======================================================================
+* Base styles overrides
+.........................................................................*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: var(--dark);
+}
+::selection {
+    color: #fff;
+    background-color: var(--primary);
+}
+h1 {
+    line-height: 1.5;
+}
+
+h2 {
+    line-height: 1.25;
+}
+
+h3 {
+    line-height: 1.25;
+}
+
+h4 {
+    line-height: 1.25;
+}
+
+h5 {
+    line-height: 1.25;
+}
+
+h6 {
+    line-height: 1.25;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+/* ==========================================================================
+* Variables
+-----------------------------------------------------------------------------*/
+:root {
+    --primary: #ed6524;
+    --secondary: #4c527d;
+    --dark: #1c1e2e;
+    --light: #f6f8fc;
+    --line-height: 1.5;
+    --font-heading: "Quicksand", sans-serif;
+}
+
+/* ==========================================================================
+* Reusable Components
+-----------------------------------------------------------------------------*/
+.container {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: auto;
+}
+@media only screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+}
+.single-column {
+    max-width: 760px;
+    margin: auto;
+    text-align: center;
+}
+.btn {
+    padding: 14px 28px;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 550;
+    transition: all 0.4s ease-in-out;
+}
+.btn-outline {
+    background-color: #fff;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.btn-outline:hover {
+    color: #fff;
+    background-color: var(--primary);
+}
+
+.card {
+    background-color: var(--light);
+    color: var(--secondary);
+    padding: 20px;
+    line-height: var(--line-height);
+    position: relative;
+}
+@media only screen and (max-width: 767px) {
+    .card {
+        width: 100%;
+    }
+}
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 10px;
+}
+.profile .profile-img {
+    width: 60px;
+    height: 60px;
+}
+.profile .profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    color: var(--secondary);
+}
+.section-heading {
+    font-size: 2.5em;
+    font-family: var(--font-heading);
+    margin-bottom: 20px;
+    text-align: center;
+}
+@media only screen and (max-width: 767px) {
+    .section-heading {
+        font-size: 1.92em;
+    }
+}
+.section-intro {
+    color: var(--secondary);
+    font-size: 1.25em;
+    line-height: var(--line-height);
+    margin: auto;
+    text-align-last: center;
+}
+/* ==========================================================================
+* Header
+-----------------------------------------------------------------------------*/
+header .branding {
+    padding: 20px 15px;
+}
+header .branding a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--dark);
+    font-size: 1.5em;
+    font-weight: 550;
+}
+
+/* ==========================================================================
+* Hero Section
+-----------------------------------------------------------------------------*/
+.hero-section {
+    padding-bottom: 100px;
+}
+.hero-section .hero-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.hero-section .hero-content {
+    width: 58%;
+    padding-top: 75px;
+    padding-right: 58px;
+}
+.hero-section .hero-content h1 {
+    text-align: start;
+}
+.hero-section .hero-content p {
+    text-align-last: start;
+}
+.hero-section .hero-content .cta-holder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+.hero-section .carousel .carousel__item {
+    display: none;
+    animation-name: fade-in;
+    animation-duration: 1.5s;
+}
+.hero-section .carousel .carousel__item.active {
+    display: block;
+    animation-name: fade-out;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.4;
+    }
+}
+.hero-section .carousel .quote::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary);
+    opacity: 0.6;
+}
+.hero-section .carousel .quote::after {
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    border-style: solid;
+    border-color: var(--light) transparent transparent transparent;
+}
+
+.hero-section .carousel .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.hero-section .carousel .carousel-indicators .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    opacity: 0.5;
+    cursor: pointer;
+}
+.hero-section .carousel .carousel-indicators .indicator.active,
+.hero-section .carousel .carousel-indicators .indicator:hover {
+    opacity: 1;
+}
+
+.hero-section .hero-image {
+    width: 41%;
+    position: relative;
+}
+.hero-section .hero-image .book-badge {
+    width: 120px;
+    height: 120px;
+    background-color: #5cb377;
+    border-radius: 50%;
+    padding-top: 20px;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 550;
+    font-family: var(--font-heading);
+    text-align: center;
+    position: absolute;
+    top: -6%;
+    right: 0;
+}
+.hero-image a {
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+    color: var(--dark);
+}
+
+/* Responsive Hero section ----------------------------------------------- */
+@media only screen and (max-width: 767px) {
+    .hero-section .hero-content {
+        width: 100%;
+        padding-top: 45px;
+        padding-right: 0;
+    }
+    .hero-section .hero-content .cta-holder button {
+        width: 100%;
+    }
+    .hero-section .hero-image {
+        width: 100%;
+    }
+    .hero-section .hero-image .book-badge {
+        width: 100px;
+        height: 100px;
+        font-size: 1.25em;
+    }
+}
+/* ==========================================================================
+* Benefits Section
+-----------------------------------------------------------------------------*/
+.benefits-section {
+    padding: 50px 0;
+    background-image: linear-gradient(to bottom, var(--light) 30%, #fff 70%);
+}
+.benefits-section .benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 80px;
+}
+.benefits-section .benefits-list .benefits__item {
+    width: 30%;
+}
+.benefits-section .benefits-list .benefits__item__icon {
+    text-align: center;
+    font-size: 65px;
+    color: var(--primary);
+    position: relative;
+}
+.benefits-section .benefits-list .benefits__item__icon .inner-icon {
+    position: absolute;
+    top: 8px;
+    left: 48.5%;
+    font-size: 32px;
+}
+.benefits-section .benefits-list .benefits__item__heading {
+    font-family: var(--font-heading);
+    text-align: center;
+    margin: 20px 0;
+}
+.benefits-section .benefits-list .benefits__item__description {
+    color: var(--secondary);
+    line-height: var(--line-height);
+}
+/* Responsive Benefits section ----------------------------------------------- */
+@media only screen and (max-width: 767px) {
+    .benefits-section .benefits-list .benefits__item {
+        width: 100%;
+    }
+}
+/* ==========================================================================
+* Content Section
+-----------------------------------------------------------------------------*/
+.content-section {
+    padding: 50px;
+}
+.content-section .content-section__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.content-section .content__image-holder {
+    width: 48%;
+}
+.content-section .content__key-points-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    width: 48%;
+}
+.content-section .content__key-points-holder .key-points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--secondary);
+    font-size: 1.25em;
+}
+.content-section .content__key-points-holder .key-points-list .list__item {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+}
+/* Responsive Conetent section ----------------------------------------------- */
+@media only screen and (max-width: 767px) {
+    .content-section .content__image-holder,
+    .content-section .content__key-points-holder {
+        width: 100%;
+    }
+    .content-section .content__key-points-holder {
+        margin-top: 20px;
+    }
+}
+@media only screen and (max-width: 577px) {
+    .content-section .content__key-points-holder .key-points-list {
+        font-size: 1.125em;
+    }
+}
+/* ==========================================================================
+* Audience Section
+-----------------------------------------------------------------------------*/
+.audience-section {
+    padding: 40px 0;
+}
+.audience-section .audience__wrapper {
+    margin-top: 30px;
+}
+.audience-section .audience__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.audience-section .audience__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+}
+.audience-section .audience__item .audience__item__icon {
+    font-size: 1.75em;
+    color: var(--primary);
+}
+.audience-section .audience__item .audience__item__title {
+    font-family: var(--font-heading);
+    font-size: 1.25em;
+}
+.audience-section .audience__item .audience__item__description {
+    color: var(--secondary);
+    font-size: 1.1em;
+    line-height: var(--line-height);
+}
+
+/* ==========================================================================
+* Form Section
+-----------------------------------------------------------------------------*/
+.form-section {
+    padding: 40px 0;
+}
+.form-section .form__text-content {
+    max-width: 500px;
+    margin: auto;
+}
+.form-section .form__text-content h2 {
+    font-size: 1.75em;
+    color: var(--dark);
+    font-family: var(--font-heading);
+    text-align: center;
+    margin-bottom: 12px;
+}
+.form-section .form__text-content p {
+    font-size: 1em;
+    line-height: var(--line-height);
+    text-align: center;
+}
+.form-section .form-section__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 25px;
+}
+.form-section .form-section__form input {
+    height: 50px;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    font-size: 1em;
+    text-indent: 5px;
+    flex-grow: 1;
+}
+.form-section .form-section__form input:focus {
+    outline: 1px solid var(--primary);
+}
+.form-section .form-section__form button {
+    width: 150px;
+    border-radius: 10px;
+}
+/* Responsive Form section ----------------------------------------------- */
+@media only screen and (max-width: 776px) {
+    .form-section .form-section__form input,
+    .form-section .form-section__form button {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+* Reviews Section
+-----------------------------------------------------------------------------*/
+.reviews-section {
+    padding: 60px 0;
+}
+.reviews-section .reviews__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.reviews-section .reviews__list .review__item {
+    position: relative;
+    margin-top: 30px;
+    padding: 20px;
+    width: 30%;
+    flex-shrink: 1;
+}
+.reviews__list .review__item .review__item__icon {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    background: var(--primary);
+    opacity: 0.6;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+}
+/* Responsive Reviews section ----------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .reviews-section .reviews__list .review__item {
+        width: 46%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .reviews-section .reviews__list .review__item {
+        width: 100%;
+    }
+}
+/* ==========================================================================
+* Author Section
+-----------------------------------------------------------------------------*/
+.author-section {
+    padding: 40px 0;
+    background-color: var(--primary);
+    color: #fff;
+}
+.author-section .author__image {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.author-section p {
+    color: #fff;
+    font-size: 1em;
+    text-align: start;
+    text-align-last: start;
+    margin-bottom: 15px;
+}
+.author-section a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.author-section .author__social-links {
+    font-family: var(--font-heading);
+    margin-top: 30px;
+}
+.author-section .links__list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.125em;
+    margin-top: 15px;
+}
+.author-section .links__list .links__list__item {
+    background-color: #1c1e2e30;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+* Footer Section
+-----------------------------------------------------------------------------*/
+.footer-section {
+    padding: 40px;
+}
